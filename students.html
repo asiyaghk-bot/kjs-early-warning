@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Student Profiles — KJS Warning</title>
+  <link rel="stylesheet" href="style.css"/>
+  <link rel="stylesheet" href="students.css"/>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" rel="stylesheet"/>
+</head>
+<body>
+	<aside class="sidebar">
+			<div class="sidebar-header">
+			<div class="logo-icon">
+					<i class="fa-solid fa-graduation-cap"></i>
+			</div>
+			<div class="sidebar-header-text">
+					<p class="sidebar-title">KJS Warning</p>
+					<p class="sidebar-subtitle">Educational Oversight</p>
+			</div>
+			</div>
+			<ul class="sidebar-menu">
+			<li>
+					<a href="index.html">
+					<i class="fa-solid fa-triangle-exclamation"></i>
+					Overview
+					</a>
+			</li>
+			<li>
+					<a href="#"class="api-feature">
+					<i class="fa-solid fa-people-line"></i>
+					At-Risk Students
+					</a>
+			</li>
+			<li  class="active">
+					<a href="students.html">
+					<i class="fa-solid fa-address-book"></i>
+					Student Profiles
+					</a>
+			</li>
+			<li>
+					<a href="#" class="api-feature">
+					<i class="fa-solid fa-chart-pie"></i>
+					Monitor Performance
+					</a>
+			</li>
+			<li>
+					<a href="#" class="api-feature">
+					<i class="fa-solid fa-gear"></i>
+					Settings
+					</a>
+			</li>
+			</ul>
+			<button class="add-student"><i class="fa-solid fa-plus"></i>  New Student alert</button>
+			<button class="btn-import" id="importStudentsBtn"><i class="fas fa-file-import"></i>Import Students</button>
+
+			<input type="file" id="csvFile" accept=".csv" hidden>
+  </aside>
+  <main class="student-page">
+
+    <div class="page-header">
+      <div>
+        <h1>Student Profiles</h1>
+        <p>View and manage student information.</p>
+      </div>
+    </div>
+
+    <div class="student-filters">
+      <div class="search-wrap">
+        <i class="fas fa-magnifying-glass"></i>
+        <input type="text" id="studentSearch" placeholder="Search by name or ID..."/>
+      </div>
+      <select id="departmentFilter">
+        <option value="ALL">All Departments</option>
+        <option value="COMPUTER">Computer</option>
+        <option value="IT">IT</option>
+        <option value="EXTC">EXTC</option>
+        <option value="ELECTRONICS">Electronics</option>
+        <option value="MECHANICAL">Mechanical</option>
+      </select>
+      <select id="semesterFilter">
+        <option value="ALL">All Semesters</option>
+        <option value="1">Semester 1</option>
+        <option value="2">Semester 2</option>
+        <option value="3">Semester 3</option>
+        <option value="4">Semester 4</option>
+      </select>
+      <select id="riskFilter">
+        <option value="ALL">All Risk Levels</option>
+        <option value="High Risk">High Risk</option>
+        <option value="Medium Risk">Medium Risk</option>
+        <option value="Safe">Safe</option>
+      </select>
+    </div>
+
+    <div class="mini-cards">
+      <div class="mini-card">
+        <span class="mini-label">Total Students</span>
+        <span class="mini-number" id="totalCount">0</span>
+      </div>
+      <div class="mini-card high">
+        <span class="mini-label">High Risk</span>
+        <span class="mini-number" id="highCount">0</span>
+      </div>
+      <div class="mini-card medium">
+        <span class="mini-label">Medium Risk</span>
+        <span class="mini-number" id="mediumCount">0</span>
+      </div>
+      <div class="mini-card safe">
+        <span class="mini-label">Safe</span>
+        <span class="mini-number" id="safeCount">0</span>
+      </div>
+    </div>
+
+    <div class="student-table-container">
+      <table>
+        <thead>
+          <tr>
+            <th>Student ID</th>
+            <th>Name</th>
+            <th>Department</th>
+            <th>Semester</th>
+            <th>Attendance</th>
+            <th>Marks</th>
+            <th>Assignments</th>
+            <th>Risk Level</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+        <tbody id="studentList"></tbody>
+      </table>
+      <p class="empty-msg" id="emptyMsg" style="display:none;">No students found.</p>
+    </div>
+
+  </main>
+
+  <div class="modal-backdrop" id="modalBackdrop" style="display:none;">
+    <div class="modal">
+      <div class="modal-header">
+        <h3>Add New Student</h3>
+        <button onclick="closeModal()"><i class="fas fa-xmark"></i></button>
+      </div>
+      <div class="modal-body">
+        <div class="form-row">
+          <div class="form-group">
+            <label>Student ID</label>
+            <input type="text" id="newId" placeholder="e.g. 16014025035"/>
+          </div>
+          <div class="form-group">
+            <label>Full Name</label>
+            <input type="text" id="newName" placeholder="e.g. Asiya Kazi"/>
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label>Department</label>
+            <select id="newDept">
+              <option value="COMPUTER">Computer</option>
+              <option value="IT">IT</option>
+              <option value="EXTC">EXTC</option>
+              <option value="ELECTRONICS">Electronics</option>
+              <option value="MECHANICAL">Mechanical</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label>Semester</label>
+            <select id="newSem">
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+            </select>
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label>Attendance (%)</label>
+            <input type="number" id="newAttendance" placeholder="e.g. 75" min="0" max="100"/>
+          </div>
+          <div class="form-group">
+            <label>Marks (%)</label>
+            <input type="number" id="newMarks" placeholder="e.g. 80" min="0" max="100"/>
+          </div>
+          <div class="form-group">
+            <label>Assignments (%)</label>
+            <input type="number" id="newAssignments" placeholder="e.g. 90" min="0" max="100"/>
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button class="btn-cancel" onclick="closeModal()">Cancel</button>
+        <button class="btn-save" onclick="addStudent()">Add Student</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="students.js"></script>
+</body>
+</html>

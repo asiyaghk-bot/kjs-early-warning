@@ -11,7 +11,7 @@
 </head>
 <body>
 
-  <aside class="sidebar">
+ <aside class="sidebar">
     <div class="sidebar-header">
       <div class="logo-icon">
         <i class="fa-solid fa-graduation-cap"></i>
@@ -29,31 +29,34 @@
         </a>
       </li>
       <li>
-        <a href="#">
+        <a href="#"class="api-feature">
           <i class="fa-solid fa-people-line"></i>
           At-Risk Students
         </a>
       </li>
       <li>
-        <a href="#">
+        <a href="students.html">
           <i class="fa-solid fa-address-book"></i>
           Student Profiles
         </a>
       </li>
       <li>
-        <a href="#">
+        <a href="#" class="api-feature">
           <i class="fa-solid fa-chart-pie"></i>
           Monitor Performance
         </a>
       </li>
       <li>
-        <a href="#">
+        <a href="#" class="api-feature">
           <i class="fa-solid fa-gear"></i>
           Settings
         </a>
       </li>
     </ul>
     <button class="add-student"><i class="fa-solid fa-plus"></i>  New Student alert</button>
+    <button class="btn-import" id="importStudentsBtn"><i class="fas fa-file-import"></i>Import Students</button>
+
+    <input type="file" id="csvFile" accept=".csv" hidden>
   </aside>
   <main class="main">
     <div class="dashboard-text">
@@ -208,7 +211,7 @@
       </div>
     </section>
     <section class="bottom-section">
-    <!-- Risk Distribution -->
+
         <div class="risk-card">
             <h2>Risk Distribution</h2>
             <div class="risk-content">
@@ -237,7 +240,7 @@
                 </div>
             </div>
         </div>
-        <!-- Performance Summary -->
+        
         <div class="performance-card">
             <h2>Performance Summary</h2>
             <div class="performance-item">
@@ -270,7 +273,49 @@
         </div>
     </section> 
   </main>
+  <div class="modal-overlay" id="studentModal">
+    <div class="student-modal">
 
-    
+        <button class="modal-close" id="closeModal">
+            <i class="fa-solid fa-xmark"></i>
+        </button>
+
+        <h2>Add New Student</h2>
+        <p>Enter the student's academic information.</p>
+
+        <label for="studentName">Student Name</label>
+        <input type="text" id="studentName" placeholder="Enter student name">
+
+        <label for="studentId">Student ID</label>
+        <input type="text" id="studentId" placeholder="Enter student ID">
+
+        <label for="department">Department</label>
+        <select id="department">
+            <option value="">Select department</option>
+            <option value="COMPUTER">Computer</option>
+            <option value="IT">IT</option>
+            <option value="MECHANICAL">Mechanical</option>
+            <option value="EXTC">EXTC</option>
+            <option value="ELECTRONICS">Electronics</option>
+        </select>
+
+        <label for="semester">Semester</label>
+        <select id="semester">
+            <option value="">Select semester</option>
+            <option value="1">Semester 1</option>
+            <option value="2">Semester 2</option>
+            <option value="3">Semester 3</option>
+            <option value="4">Semester 4</option>
+        </select>
+
+        <button class="save-student" id="saveStudent">
+            Add Student
+        </button>
+
+    </div>
+  </div>
+  <input type="file" id="csvFile" accept=".csv" hidden>
+
+  <script src="script.js"></script>
 </body>
 </html>

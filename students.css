@@ -1,0 +1,603 @@
+/* ================================
+   RESET
+================================ */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+/* ================================
+   BODY
+================================ */
+
+body {
+    font-family: "Fira Sans", Arial, sans-serif;
+    background-color: #F8FAFC;
+    color: #0F172A;
+}
+
+
+/* ================================
+   STUDENT PAGE
+================================ */
+
+.student-page {
+    margin-left: clamp(270px, 2vw, 288px);
+    width: calc(100% - clamp(270px, 2vw, 288px));
+    min-height: 100vh;
+
+    padding: 30px 25px 30px 22px;
+}
+
+
+/* ================================
+   PAGE HEADER
+================================ */
+
+.student-page h1 {
+    margin-bottom: 8px;
+    color: #A01E25;
+    font-size: 30px;
+}
+
+.student-page > p {
+    color: #64748B;
+    margin-bottom: 30px;
+}
+
+
+/* ================================
+   ADD STUDENT BUTTON
+================================ */
+
+.btn-add-student {
+    background-color: #A01E25;
+    color: white;
+
+    border: none;
+    border-radius: 10px;
+
+    padding: 11px 18px;
+
+    font-family: inherit;
+    font-size: 14px;
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition: background-color 0.15s;
+}
+
+.btn-add-student:hover {
+    background-color: #851820;
+}
+
+
+/* ================================
+   FILTERS
+================================ */
+
+.student-filters {
+    display: flex;
+    align-items: center;
+
+    gap: 12px;
+
+    width: 100%;
+
+    margin: 20px 0;
+}
+
+
+/* SEARCH BOX */
+
+.search-wrap {
+    display: flex;
+    align-items: center;
+
+    gap: 8px;
+
+    background-color: white;
+
+    border: 1px solid #E2E8F0;
+
+    border-radius: 12px;
+
+    padding: 0 14px;
+
+    height: 50px;
+
+    flex: 1;
+    min-width: 220px;
+
+    box-shadow: 0 3px 19px rgba(0, 0, 0, 0.05);
+}
+
+.search-wrap i {
+    color: #94A3B8;
+}
+
+.search-wrap input {
+    border: none;
+    outline: none;
+
+    width: 100%;
+
+    background: transparent;
+
+    font-family: "Fira Sans", Arial, sans-serif;
+    font-size: 14px;
+
+    color: #475569;
+}
+
+.search-wrap input::placeholder {
+    color: #94A3B8;
+}
+
+
+/* SELECT BOXES */
+
+.student-filters select {
+    height: 50px;
+
+    width: 180px;
+
+    padding: 0 14px;
+
+    border: 1px solid #E2E8F0;
+
+    border-radius: 12px;
+
+    background-color: white;
+
+    color: #475569;
+
+    font-family: "Fira Sans", Arial, sans-serif;
+    font-size: 14px;
+
+    cursor: pointer;
+
+    outline: none;
+
+    box-shadow: 0 3px 19px rgba(0, 0, 0, 0.05);
+}
+
+.student-filters select:hover {
+    border-color: #CBD5E1;
+}
+
+
+/* ================================
+   MINI CARDS
+================================ */
+
+.mini-cards {
+    display: grid;
+
+    grid-template-columns: repeat(4, 1fr);
+
+    gap: 14px;
+
+    margin: 18px 0;
+}
+
+.mini-card {
+    background: white;
+
+    border: 1px solid #E2E8F0;
+
+    border-radius: 14px;
+
+    padding: 16px 18px;
+}
+
+.mini-label {
+    display: block;
+
+    color: #64748B;
+
+    font-size: 13px;
+
+    margin-bottom: 5px;
+}
+
+.mini-number {
+    display: block;
+
+    color: #0F172A;
+
+    font-size: 24px;
+    font-weight: 700;
+}
+
+.mini-card.high .mini-number {
+    color: #DC2626;
+}
+
+.mini-card.medium .mini-number {
+    color: #D97706;
+}
+
+.mini-card.safe .mini-number {
+    color: #059669;
+}
+
+
+/* ================================
+   TABLE CONTAINER
+================================ */
+
+.student-table-container {
+    background: white;
+
+    border: 1px solid #E2E8F0;
+
+    border-radius: 18px;
+
+    padding: 10px 20px;
+
+    overflow-x: auto;
+
+    width: 100%;
+}
+
+
+/* ================================
+   TABLE
+================================ */
+
+.student-table-container table {
+    width: 100%;
+
+    border-collapse: collapse;
+
+    min-width: 850px;
+}
+
+
+/* TABLE HEADINGS */
+
+.student-table-container th {
+    padding: 15px;
+
+    text-align: left;
+
+    border-bottom: 1px solid #E2E8F0;
+
+    color: #475569;
+
+    font-size: 13px;
+
+    font-weight: 600;
+
+    text-transform: uppercase;
+}
+
+
+/* TABLE CELLS */
+
+.student-table-container td {
+    padding: 15px;
+
+    text-align: left;
+
+    border-bottom: 1px solid #E2E8F0;
+
+    color: #0F172A;
+
+    font-size: 14px;
+}
+
+
+/* LAST ROW */
+
+.student-table-container tbody tr:last-child td {
+    border-bottom: none;
+}
+
+
+/* HOVER */
+
+.student-table-container tbody tr:hover {
+    background-color: #F8FAFC;
+}
+
+
+/* ================================
+   STUDENT ID
+================================ */
+
+.student-id {
+    color: #64748B;
+    font-size: 13px;
+}
+
+
+/* ================================
+   STUDENT NAME
+================================ */
+
+.student-name {
+    font-weight: 600;
+}
+
+
+/* ================================
+   DEPARTMENT BADGE
+================================ */
+
+.dept-badge {
+    display: inline-block;
+
+    padding: 4px 10px;
+
+    border-radius: 20px;
+
+    background-color: #EFF6FF;
+
+    color: #2563EB;
+
+    font-size: 12px;
+
+    font-weight: 600;
+}
+
+
+/* ================================
+   RISK BADGES
+================================ */
+
+.risk-badge {
+    display: inline-block;
+
+    padding: 4px 10px;
+
+    border-radius: 20px;
+
+    font-size: 12px;
+
+    font-weight: 600;
+}
+
+.risk-badge.high {
+    background-color: #FEF2F2;
+    color: #DC2626;
+    border: 1px solid #FECACA;
+}
+
+.risk-badge.medium {
+    background-color: #FFFBEB;
+    color: #D97706;
+    border: 1px solid #FDE68A;
+}
+
+.risk-badge.safe {
+    background-color: #F0FDF4;
+    color: #059669;
+    border: 1px solid #A7F3D0;
+}
+
+
+/* ================================
+   ACTION BUTTON
+================================ */
+
+.action-btn {
+    border: none;
+
+    border-radius: 8px;
+
+    padding: 7px 14px;
+
+    background-color: #A01E25;
+
+    color: white;
+
+    font-family: inherit;
+
+    font-size: 12px;
+
+    font-weight: 600;
+
+    cursor: pointer;
+}
+
+.action-btn:hover {
+    background-color: #851820;
+}
+
+
+/* ================================
+   EMPTY MESSAGE
+================================ */
+
+.empty-msg {
+    text-align: center;
+
+    color: #94A3B8;
+
+    padding: 30px;
+
+    font-size: 14px;
+}
+
+
+/* ================================
+   MODAL
+================================ */
+
+.modal-backdrop {
+    position: fixed;
+
+    inset: 0;
+
+    background: rgba(0, 0, 0, 0.45);
+
+    z-index: 200;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+}
+
+.modal {
+    width: 520px;
+
+    max-width: 95vw;
+
+    background: white;
+
+    border-radius: 16px;
+
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+}
+
+.modal-header {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    padding: 18px 22px;
+
+    border-bottom: 1px solid #E2E8F0;
+}
+
+.modal-header h3 {
+    font-size: 16px;
+
+    color: #0F172A;
+}
+
+.modal-header button {
+    border: none;
+
+    background: none;
+
+    color: #94A3B8;
+
+    cursor: pointer;
+
+    font-size: 16px;
+}
+
+.modal-body {
+    padding: 20px 22px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 14px;
+}
+
+.form-row {
+    display: flex;
+
+    gap: 14px;
+}
+
+.form-group {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 5px;
+
+    flex: 1;
+}
+
+.form-group label {
+    color: #475569;
+
+    font-size: 12px;
+
+    font-weight: 600;
+}
+
+.form-group input,
+.form-group select {
+    padding: 9px 12px;
+
+    border: 1px solid #E2E8F0;
+
+    border-radius: 9px;
+
+    font-family: inherit;
+
+    font-size: 13.5px;
+
+    outline: none;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+    border-color: #A01E25;
+}
+
+
+/* ================================
+   MODAL FOOTER
+================================ */
+
+.modal-footer {
+    display: flex;
+
+    justify-content: flex-end;
+
+    gap: 10px;
+
+    padding: 16px 22px;
+
+    border-top: 1px solid #E2E8F0;
+}
+
+.btn-cancel {
+    padding: 9px 18px;
+
+    border: 1px solid #E2E8F0;
+
+    border-radius: 9px;
+
+    background: white;
+
+    color: #475569;
+
+    font-family: inherit;
+
+    font-size: 13px;
+
+    font-weight: 600;
+
+    cursor: pointer;
+}
+
+.btn-save {
+    padding: 9px 18px;
+
+    border: none;
+
+    border-radius: 9px;
+
+    background: #A01E25;
+
+    color: white;
+
+    font-family: inherit;
+
+    font-size: 13px;
+
+    font-weight: 600;
+
+    cursor: pointer;
+}
+
+.btn-save:hover {
+    background: #851820;
+}

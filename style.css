@@ -116,11 +116,18 @@ body{
 .sidebar-menu li:hover{
     background-color: #bb5c60;
 } 
+.sidebar-menu li.active {
+    background-color: rgba(255,255,255,.20);
+}
+
+.sidebar-menu li:hover {
+    background-color: rgba(255,255,255,.12);
+}
 .sidebar-menu a{
     text-decoration: none;
     color:white;
 }
-.add-student{
+.add-student, .btn-import{
     margin-top: auto;
     margin-bottom: 20px;
     border:none;
@@ -132,7 +139,7 @@ body{
     padding: 15px 20px;
     transition: transform 0.15s ease-in-out;
 }
-.add-student:hover{
+.add-student:hover, .btn-import:hover{
     transform:translateY(-3px);
     box-shadow: 1px 1px 3px rgba(78, 23, 23, 0.8);
 }
@@ -610,4 +617,71 @@ header{
         flex-direction:column;
     }
 
+}
+.modal-overlay {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(15, 23, 42, 0.45);
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.student-modal {
+    position: relative;
+    width: 420px;
+    max-width: 90%;
+    background: white;
+    border-radius: 18px;
+    padding: 28px;
+}
+
+.modal-close {
+    position: absolute;
+    top: 15px;
+    right: 18px;
+    border: none;
+    background: none;
+    font-size: 20px;
+    cursor: pointer;
+    color: #475569;
+}
+
+.student-modal h2 {
+    margin-bottom: 6px;
+}
+
+.student-modal p {
+    color: #64748B;
+    margin-bottom: 20px;
+}
+
+.student-modal label {
+    display: block;
+    margin-top: 14px;
+    margin-bottom: 6px;
+    font-weight: 500;
+}
+
+.student-modal input,
+.student-modal select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #CBD5E1;
+    border-radius: 9px;
+    font-family: "Fira Sans";
+}
+
+.save-student {
+    width: 100%;
+    margin-top: 22px;
+    padding: 12px;
+    border: none;
+    border-radius: 9px;
+    background: #A01E25;
+    color: white;
+    font-family: "Fira Sans";
+    font-weight: 600;
+    cursor: pointer;
 }
