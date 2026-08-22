@@ -5,6 +5,7 @@ A student performance and risk-tracking dashboard developed as part of my intern
 ## Overview
 
 The KJS Early Warning Dashboard is designed to help identify students who may need academic attention by providing a centralised view of student performance, assignments, and risk indicators.
+**What works as of now is the overview page and student performance page. Further changes to made in future through backend integration.**
 
 ## Features
 
