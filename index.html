@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Attempt</title>
+   <link rel="stylesheet" href="style.css">
+   <link
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    rel="stylesheet">
+</head>
+<body>
+
+  <aside class="sidebar">
+    <div class="sidebar-header">
+      <div class="logo-icon">
+        <i class="fa-solid fa-graduation-cap"></i>
+      </div>
+      <div class="sidebar-header-text">
+        <p class="sidebar-title">KJS Warning</p>
+        <p class="sidebar-subtitle">Educational Oversight</p>
+      </div>
+    </div>
+    <ul class="sidebar-menu">
+      <li class="active">
+        <a href="#">
+          <i class="fa-solid fa-triangle-exclamation"></i>
+          Overview
+        </a>
+      </li>
+      <li>
+        <a href="#">
+          <i class="fa-solid fa-people-line"></i>
+          At-Risk Students
+        </a>
+      </li>
+      <li>
+        <a href="#">
+          <i class="fa-solid fa-address-book"></i>
+          Student Profiles
+        </a>
+      </li>
+      <li>
+        <a href="#">
+          <i class="fa-solid fa-chart-pie"></i>
+          Monitor Performance
+        </a>
+      </li>
+      <li>
+        <a href="#">
+          <i class="fa-solid fa-gear"></i>
+          Settings
+        </a>
+      </li>
+    </ul>
+    <button class="add-student"><i class="fa-solid fa-plus"></i>  New Student alert</button>
+  </aside>
+  <main class="main">
+    <div class="dashboard-text">
+      <p class="dashboard-title">
+        At-Risk Student Monitoring
+      </p>
+      <p class="dashboard-subtitle">
+        Real-time alerts identifying critical academic and attendance deviations
+      </p>
+    </div>
+    <header>
+      <div class="searchbox-container">
+         <i class="fa-solid fa-magnifying-glass"></i>
+         <input placeholder="Search student by name or ID..." type="text" id="searchInput">
+      </div>
+      <div class="right-section">
+        <div class="semester">
+          <select>
+            <option>Semester: All</option>
+            <option>Semester 1</option>
+            <option>Semester 2</option>
+            <option>Semester 3</option>
+            <option>Semester 4</option>
+          </select>
+        </div>
+        <div class="department">
+          <select>
+            <option>Department: All</option>
+            <option>COMPUTER</option>
+            <option>IT</option>
+            <option>MECHANICAL</option>
+            <option>EXTC</option>
+            <option>ELECTRONICS</option>
+          </select>
+        </div>
+        <div class="report-button">
+          <a href="#">
+            <i class="fa-solid fa-file-arrow-down"></i>
+            Generate Report
+          </a>
+        </div>
+      </div>
+    </header>
+    <section class="alert-cards">
+      <div class="red-card">
+        <div class="text-section">
+          <p class="card-title">At-Risk Students</p>
+          <p class="card-stat">24</p>
+          <p class="card-info"><span class="re-hi">&uarr;12&percnt;
+          </span>&nbsp;from last month</p>
+        </div>
+        <div class="icon-section">
+          <i class="fa-solid fa-user"></i>
+        </div>
+      </div>
+      <div class="yellow-card">
+         <div class="text-section">
+           <p class="card-title">Attendance Alerts</p>
+           <p class="card-stat">15</p>
+           <p class="card-info"><span class="ye-hi">&uarr;8&percnt;</span>&nbsp;from last month</p>
+         </div>
+         <div class="icon-section">
+          <i class="fa-solid fa-calendar-days"></i>
+         </div>
+      </div>
+      <div class="blue-card">
+        <div class="text-section">
+          <p class="card-title">Academics Alerts</p>
+          <p class="card-stat">9</p>
+          <p class="card-info"><span class="bl-hi">&darr;9&percnt;</span>&nbsp;from last month</p>
+        </div>
+        <div class="icon-section">
+          <i class="fa-solid fa-square-poll-vertical"></i>
+        </div>
+      </div>
+      <div class="green-card">
+        <div class="text-section">
+          <p class="card-title">Resolved Alerts</p>
+          <p class="card-stat">32</p>
+          <p class="card-info"><span class="gr-hi">&uarr;20&percnt;</span>&nbsp;from last month</p>
+        </div>
+        <div class="icon-section">
+          <i class="fa-solid fa-circle-check"></i>
+        </div>
+      </div>
+    </section>
+
+    <section class="recent-alerts">
+      <div class="recent-header">
+          <h2>Recent Alerts</h2>
+          <a href="#">View All</a>
+      </div>
+      <div class="alert-row">
+          <div class="student-info">
+              <div class="student-avatar red">
+                  AS
+              </div>
+              <p class="student-name">
+                  Aarav Singh
+              </p>
+          </div>
+          <div class="risk-tag high">
+              High Risk
+          </div>
+          <p class="alert-description">
+              Low attendance: 45% in the last 2 weeks
+          </p>
+          <p class="alert-time">
+              2 hours ago
+          </p>
+          <i class="fa-solid fa-ellipsis-vertical"></i>
+      </div>
+      <div class="alert-row">
+          <div class="student-info">
+              <div class="student-avatar yellow">
+                  PR
+              </div>
+              <p class="student-name">
+                  Priya Reddy
+              </p>
+          </div>
+          <div class="risk-tag medium">
+              Medium Risk
+          </div>
+          <p class="alert-description">
+              3 subjects below passing marks
+          </p>
+          <p class="alert-time">
+              5 hours ago
+          </p>
+          <i class="fa-solid fa-ellipsis-vertical"></i>
+      </div>
+      <div class="alert-row">
+          <div class="student-info">
+              <div class="student-avatar green">
+                  RK
+              </div>
+              <p class="student-name">
+                  Rohan Kumar
+              </p>
+          </div>
+          <div class="risk-tag low">
+              Low Risk
+          </div>
+          <p class="alert-description">
+              Irregular submission of assignments
+          </p>
+          <p class="alert-time">
+              1 day ago
+          </p>
+          <i class="fa-solid fa-ellipsis-vertical"></i>
+      </div>
+    </section>
+    <section class="bottom-section">
+    <!-- Risk Distribution -->
+        <div class="risk-card">
+            <h2>Risk Distribution</h2>
+            <div class="risk-content">
+                <div class="pie-chart">
+                    <div class="pie-center">
+                        <h2>80</h2>
+                        <p>Total</p>
+                    </div>
+                </div>
+                <div class="risk-legend">
+                    <div class="legend-item">
+                        <span class="dot green"></span>
+                        <p>Safe</p>
+                        <span>45</span>
+                    </div>
+                    <div class="legend-item">
+                        <span class="dot yellow"></span>
+                        <p>Warning</p>
+                        <span>23</span>
+                    </div>
+                    <div class="legend-item">
+                        <span class="dot red"></span>
+                        <p>Critical</p>
+                        <span>12</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Performance Summary -->
+        <div class="performance-card">
+            <h2>Performance Summary</h2>
+            <div class="performance-item">
+                <div class="performance-top">
+                    <span>Average Attendance</span>
+                    <span>82%</span>
+                </div>
+                <div class="progress">
+                    <div class="progress-fill green-fill"></div>
+                </div>
+            </div>
+            <div class="performance-item">
+                <div class="performance-top">
+                    <span>Average Marks</span>
+                    <span>74%</span>
+                </div>
+                <div class="progress">
+                    <div class="progress-fill orange-fill"></div>
+                </div>
+            </div>
+            <div class="performance-item">
+                <div class="performance-top">
+                    <span>Assignment Completion</span>
+                    <span>88%</span>
+                </div>
+                <div class="progress">
+                    <div class="progress-fill blue-fill"></div>
+                </div>
+            </div>
+        </div>
+    </section> 
+  </main>
+
+    
+</body>
+</html>
